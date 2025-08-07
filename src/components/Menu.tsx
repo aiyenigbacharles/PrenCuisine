@@ -79,39 +79,39 @@ const Featured = () => {
   ];
 
   return (
-    <section id="featured" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+    <section id="featured" className="py-12 sm:py-16 lg:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
             Our <span className="text-red-600">Menu</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
            Here at Pren Cuisine, we bring flavor and joy to your events 
            and everyday moments. Explore our menu and let us cater to your taste buds.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {services.map((item, idx) => (
             <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg">
               <div className="relative overflow-hidden rounded-t-lg">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-48 sm:h-64 lg:h-80 xl:h-96 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
 
                 {/* ➋ Price badge — Option A: overlay on image */}
-                <Badge className="absolute top-3 right-3 bg-red-600/90 text-white backdrop-blur-sm px-3 py-1 text-lg">
+                <Badge className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-red-600/90 text-white backdrop-blur-sm px-2 sm:px-3 py-1 text-sm sm:text-base lg:text-lg">
                   {item.price}
                 </Badge>
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
 
-              <CardContent className="p-8">
+              <CardContent className="p-4 sm:p-6 lg:p-8">
                 <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-xl font-semibold text-gray-800 group-hover:text-red-600 transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 group-hover:text-red-600 transition-colors line-clamp-2">
                     {item.title}
                   </h3>
 
@@ -119,7 +119,7 @@ const Featured = () => {
                   {/* <Badge className="bg-red-100 text-red-700">{item.price}</Badge> */}
                 </div>
 
-                <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed line-clamp-3">{item.description}</p>
               </CardContent>
             </Card>
           ))}

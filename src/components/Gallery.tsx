@@ -51,18 +51,18 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="gallery" className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+    <section id="gallery" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-orange-50 to-red-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
             Our <span className="text-red-600">Gallery</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             Take a visual journey through our culinary creations and see the artistry that goes into every dish we prepare.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
           {galleryImages.map((image, index) => (
             <div 
               key={index} 
@@ -71,11 +71,11 @@ const Gallery = () => {
               <img 
                 src={image.src} 
                 alt={image.alt}
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-48 sm:h-56 lg:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-white font-semibold text-lg">{image.title}</h3>
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
+                  <h3 className="text-white font-semibold text-base sm:text-lg">{image.title}</h3>
                 </div>
               </div>
             </div>
@@ -83,30 +83,30 @@ const Gallery = () => {
         </div>
 
         {/* Scrolling Meal Images Slider */}
-        <div className="mb-12">
-          <h3 className="text-3xl font-bold text-center text-gray-800 mb-8">
+        <div className="mb-8 sm:mb-12">
+          <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-6 sm:mb-8">
             Our <span className="text-red-600">Delicious Meals</span>
           </h3>
           
           <div className="relative overflow-hidden">
-            <div className="flex animate-[scroll_10s_linear_infinite] hover:pause">
+            <div className="flex animate-[scroll_15s_linear_infinite] sm:animate-[scroll_10s_linear_infinite] hover:pause">
               {/* First set of images */}
               {mealImages.map((src, index) => (
-                <div key={index} className="flex-shrink-0 mx-2">
+                <div key={index} className="flex-shrink-0 mx-1 sm:mx-2">
                   <img
                     src={src}
                     alt={`Delicious meal ${index + 1}`}
-                    className="w-72 h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                    className="w-48 sm:w-64 lg:w-72 h-32 sm:h-40 lg:h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                   />
                 </div>
               ))}
               {/* Duplicate set for seamless loop */}
               {mealImages.map((src, index) => (
-                <div key={`duplicate-${index}`} className="flex-shrink-0 mx-2">
+                <div key={`duplicate-${index}`} className="flex-shrink-0 mx-1 sm:mx-2">
                   <img
                     src={src}
                     alt={`Delicious meal ${index + 1}`}
-                    className="w-72 h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                    className="w-48 sm:w-64 lg:w-72 h-32 sm:h-40 lg:h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                   />
                 </div>
               ))}
@@ -115,7 +115,7 @@ const Gallery = () => {
         </div>
 
         <div className="text-center">
-          <p className="text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-gray-600 px-4">
             Want to see more? Follow us on social media for daily updates and behind-the-scenes content!
           </p>
         </div>
